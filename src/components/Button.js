@@ -4,7 +4,6 @@ import { lighten, darken } from "polished";
 
 // 색상 스타일
 const colorStyles = css`
-  /* 색상 */
   ${({ theme, color }) => {
     const selected = theme.palette[color];
     return css`
@@ -30,7 +29,7 @@ const colorStyles = css`
   }}
 `;
 
-// 사이즈
+// 참조용 사이즈
 const sizes = {
   large: { height: "3rem", fontSize: "1.25rem" },
   medium: { height: "2.25rem", fontSize: "1rem" },
@@ -45,7 +44,7 @@ const sizeStyles = css`
   `}
 `;
 
-// fullWidth 스타일
+// 너비 스타일
 const fullWidthStyle = css`
   ${(props) =>
     props.fullWidth &&
@@ -72,17 +71,12 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: 0 1rem;
 
-  /* 기타 */
   & + & {
     margin-left: 1rem;
   }
 
-  /* 크기 */
   ${sizeStyles}
-
-  /* 색상 */
   ${colorStyles}
-
   ${fullWidthStyle}
 `;
 

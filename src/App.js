@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Button from "./components/Button";
+import Dialog from "./components/Dialog";
 
 const AppBlock = styled.div`
   width: 512px;
@@ -38,6 +39,7 @@ function App() {
               BUTTON
             </Button>
           </ButtonGroup>
+
           <ButtonGroup>
             <Button color="blue" size="large" outline>
               BUTTON
@@ -49,6 +51,7 @@ function App() {
               BUTTON
             </Button>
           </ButtonGroup>
+
           <ButtonGroup>
             <Button color="blue" size="large" fullWidth>
               BUTTON
@@ -60,6 +63,10 @@ function App() {
               BUTTON
             </Button>
           </ButtonGroup>
+
+          <Dialog title="데이터 삭제" confirmText="삭제" cancelText="취소">
+            데이터가 삭제됩니다.
+          </Dialog>
         </AppBlock>
       </ThemeProvider>
     </>
