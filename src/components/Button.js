@@ -18,6 +18,19 @@ const colorStyles = css`
   }}
 `;
 
+const sizes = {
+  large: { height: "3rem", fontSize: "1.25rem" },
+  medium: { height: "2.25rem", fontSize: "1rem" },
+  small: { height: "1.75rem", fontSize: "0.875rem" },
+};
+
+const sizeStyles = css`
+  ${({ size }) => css`
+    height: ${sizes[size].height};
+    font-size: ${sizes[size].fontSize};
+  `}
+`;
+
 const StyledButton = styled.button`
   /* Styled Components 주석 공통 스타일 */
   display: inline-flex;
@@ -32,8 +45,7 @@ const StyledButton = styled.button`
   padding: 0 1rem;
 
   /* 크기 */
-  height: 2.25rem;
-  font-size: 1rem;
+  ${sizeStyles}
 
   /* 색상 */
   ${colorStyles}
@@ -44,9 +56,9 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button({ children, color, ...rest }) {
+function Button({ children, color, size, ...rest }) {
   return (
-    <StyledButton color={color} {...rest}>
+    <StyledButton color={color} size={size} {...rest}>
       {children}
     </StyledButton>
   );
@@ -54,6 +66,7 @@ function Button({ children, color, ...rest }) {
 
 Button.defaultProps = {
   color: "blue",
+  size: "medium",
 };
 
 export default Button;
