@@ -10,7 +10,7 @@ const AppBlock = styled.div`
   padding: 1rem;
 `;
 
-const buttonGroup = styled.div`
+const ButtonGroup = styled.div`
   & + & {
     margin-top: 1rem;
   }
@@ -27,7 +27,7 @@ function App() {
     <>
       <ThemeProvider theme={{ palette }}>
         <AppBlock>
-          <buttonGroup>
+          <ButtonGroup>
             <Button color="blue" size="large">
               BUTTON
             </Button>
@@ -37,7 +37,29 @@ function App() {
             <Button color="pink" size="small">
               BUTTON
             </Button>
-          </buttonGroup>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button color="blue" size="large" outline>
+              BUTTON
+            </Button>
+            <Button color="gray" size="medium" outline>
+              BUTTON
+            </Button>
+            <Button color="pink" size="small" outline>
+              BUTTON
+            </Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button color="blue" size="large" fullWidth>
+              BUTTON
+            </Button>
+            <Button color="gray" size="large" fullWidth>
+              BUTTON
+            </Button>
+            <Button color="pink" size="large" fullWidth>
+              BUTTON
+            </Button>
+          </ButtonGroup>
         </AppBlock>
       </ThemeProvider>
     </>
